@@ -1,0 +1,13 @@
+# Build artifacts
+ShinyMac
+*.o
+*.swiftmodule
+*.swiftdoc
+
+# macOS
+.DS_Store
+*.xcuserstate
+
+# Build directory (keep DMG for releases)
+build/dmg_temp/
+build/rw.*.dmg
