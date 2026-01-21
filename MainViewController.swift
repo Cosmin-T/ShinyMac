@@ -319,8 +319,8 @@ class MainViewController: NSViewController {
         leftCmdKey.isHidden = false
         rightCmdKey.isHidden = false
         
-        // Start safety timer (auto-unlock after 5 minutes)
-        safetyTimer = Timer.scheduledTimer(withTimeInterval: 300.0, repeats: false) { [weak self] _ in
+        // Start safety timer (auto-unlock after 8 minutes)
+        safetyTimer = Timer.scheduledTimer(withTimeInterval: 480.0, repeats: false) { [weak self] _ in
             print("⚠️ Safety timeout - auto-unlocking!")
             self?.unlockEverything()
         }

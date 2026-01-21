@@ -104,6 +104,10 @@ EOF
 # Create PkgInfo
 echo "APPL????" > "$APP_BUNDLE/Contents/PkgInfo"
 
+# Ad-hoc code signing (helps prevent "damaged" error)
+echo "🔐 Ad-hoc code signing..."
+codesign --force --deep --sign - "$APP_BUNDLE" 2>/dev/null || echo "⚠️  Code signing skipped (codesign not available)"
+
 echo "✅ App bundle created successfully!"
 echo ""
 echo "📦 Location: $APP_BUNDLE"

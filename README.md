@@ -10,9 +10,11 @@ Lock your Mac's keyboard and trackpad for safe cleaning.
 
 1. Download the DMG file
 2. Open the DMG
-3. Drag **ShinyMac.app** to your **Applications** folder
-4. Launch ShinyMac from Applications
+3. **Important:** Drag **ShinyMac.app** to your **Applications** folder
+4. **Important:** Launch ShinyMac from Applications (not from the DMG)
 5. Grant Accessibility permissions when prompted
+
+**Note:** You must install ShinyMac in your Applications folder. Running it directly from the DMG or Downloads folder may cause issues.
 
 ## Usage
 
@@ -28,7 +30,7 @@ Lock your Mac's keyboard and trackpad for safe cleaning.
 - Fullscreen black interface
 - Visual Command key indicators
 - 3-second unlock countdown
-- Auto-unlock after 5 minutes (safety feature)
+- Auto-unlock after 8 minutes (safety feature)
 
 ## Requirements
 
@@ -45,14 +47,22 @@ On first launch, macOS will ask for Accessibility permissions:
 
 ## Troubleshooting
 
+### "App is damaged and can't be opened" or "Move to Trash"
+
+**Solution 1 (Recommended):** Make sure you've installed the app properly:
+1. Drag ShinyMac.app to your Applications folder
+2. Launch it from Applications (not from the DMG or Downloads)
+
+**Solution 2:** If that doesn't work, right-click the app in Applications and select **Open**, then click **Open** again.
+
+**Solution 3:** If you're comfortable with Terminal:
+```bash
+xattr -cr /Applications/ShinyMac.app
+```
+
 ### "App can't be opened because it is from an unidentified developer"
 
 Right-click the app and select **Open**, then click **Open** again.
-
-Or remove quarantine:
-```bash
-xattr -d com.apple.quarantine /Applications/ShinyMac.app
-```
 
 ### Keyboard/trackpad not locking
 
@@ -62,7 +72,7 @@ xattr -d com.apple.quarantine /Applications/ShinyMac.app
 ### Can't unlock
 
 - Hold both Command keys for 3 seconds
-- Wait 5 minutes for auto-unlock
+- Wait 8 minutes for auto-unlock
 
 ## Building from Source
 
