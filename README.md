@@ -10,11 +10,27 @@ Lock your Mac's keyboard and trackpad for safe cleaning.
 
 1. Download the DMG file
 2. Open the DMG
-3. **Important:** Drag **ShinyMac.app** to your **Applications** folder
-4. **Important:** Launch ShinyMac from Applications (not from the DMG)
-5. Grant Accessibility permissions when prompted
+3. Drag **ShinyMac.app** to your **Applications** folder
+4. Try to launch ShinyMac from Applications
 
-**Note:** You must install ShinyMac in your Applications folder. Running it directly from the DMG or Downloads folder may cause issues.
+### First Launch Security Warning
+
+When you first open ShinyMac, you'll see this message:
+
+```
+"ShinyMac.app" Not opened
+Apple could not verify "ShinyMac.app" is free of malware 
+that may harm your Mac or compromise your privacy.
+```
+
+**To open the app:**
+
+1. Click **Done** (don't click "Move to Bin")
+2. Go to **System Settings** → **Privacy & Security**
+3. Scroll down to the **Security** section
+4. Click **Open Anyway** next to the ShinyMac message
+5. Confirm by clicking **Open** in the dialog that appears
+6. Grant Accessibility permissions when prompted
 
 ## Usage
 
@@ -47,22 +63,16 @@ On first launch, macOS will ask for Accessibility permissions:
 
 ## Troubleshooting
 
-### "App is damaged and can't be opened" or "Move to Trash"
+### App still won't open after following installation steps
 
-**Solution 1 (Recommended):** Make sure you've installed the app properly:
-1. Drag ShinyMac.app to your Applications folder
-2. Launch it from Applications (not from the DMG or Downloads)
+If you've already clicked "Open Anyway" in System Settings and it still doesn't work:
 
-**Solution 2:** If that doesn't work, right-click the app in Applications and select **Open**, then click **Open** again.
-
-**Solution 3:** If you're comfortable with Terminal:
-```bash
-xattr -cr /Applications/ShinyMac.app
-```
-
-### "App can't be opened because it is from an unidentified developer"
-
-Right-click the app and select **Open**, then click **Open** again.
+1. Make sure ShinyMac is in your Applications folder (not Downloads or DMG)
+2. Try opening Terminal and running:
+   ```bash
+   xattr -cr /Applications/ShinyMac.app
+   ```
+3. Then try launching the app again
 
 ### Keyboard/trackpad not locking
 
