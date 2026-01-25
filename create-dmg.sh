@@ -6,7 +6,7 @@
 set -e
 
 APP_NAME="ShinyMac"
-VERSION="1.0.0"
+VERSION="1.0.4"
 BUILD_DIR="build"
 APP_BUNDLE="$BUILD_DIR/$APP_NAME.app"
 DMG_NAME="$APP_NAME-$VERSION.dmg"
