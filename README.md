@@ -4,7 +4,7 @@ Lock your Mac's keyboard and trackpad for safe cleaning.
 
 ## Download
 
-**[Download ShinyMac v1.0.4](https://github.com/Cosmin-T/ShinyMac/releases/latest/download/ShinyMac-1.0.4.dmg)**
+**[Download ShinyMac v1.0.5](https://github.com/Cosmin-T/ShinyMac/releases/latest/download/ShinyMac-1.0.5.dmg)**
 
 ## Installation
 

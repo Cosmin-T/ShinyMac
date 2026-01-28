@@ -151,6 +151,18 @@ class MainViewController: NSViewController {
         startButton.layer?.cornerRadius = 8
         startButton.layer?.borderWidth = 0  // NO BORDER
         
+        // Set text color to white so it's visible on dark background
+        startButton.contentTintColor = .white
+        if let cell = startButton.cell as? NSButtonCell {
+            cell.attributedTitle = NSAttributedString(
+                string: "START",
+                attributes: [
+                    .foregroundColor: NSColor.white,
+                    .font: NSFont.systemFont(ofSize: 24, weight: .medium)
+                ]
+            )
+        }
+        
         view.addSubview(startButton)
         
         // CMD Key indicators - Positioned at bottom of screen
@@ -305,8 +317,15 @@ class MainViewController: NSViewController {
         appDelegate?.setWindowLevel(locked: true)
         
         // Update UI - Keep same style, just change text
-        startButton.title = "LOCKED"
-        // Keep same color as START button
+        if let cell = startButton.cell as? NSButtonCell {
+            cell.attributedTitle = NSAttributedString(
+                string: "LOCKED",
+                attributes: [
+                    .foregroundColor: NSColor.white,
+                    .font: NSFont.systemFont(ofSize: 24, weight: .medium)
+                ]
+            )
+        }
         
         // HIDE title when locked, but KEEP indicator visible and turn it ORANGE
         statusLabel.isHidden = true
@@ -369,7 +388,15 @@ class MainViewController: NSViewController {
         appDelegate?.setWindowLevel(locked: false)
         
         // Update UI
-        startButton.title = "START"
+        if let cell = startButton.cell as? NSButtonCell {
+            cell.attributedTitle = NSAttributedString(
+                string: "START",
+                attributes: [
+                    .foregroundColor: NSColor.white,
+                    .font: NSFont.systemFont(ofSize: 24, weight: .medium)
+                ]
+            )
+        }
         
         // SHOW title and indicator when unlocked
         statusLabel.isHidden = false
